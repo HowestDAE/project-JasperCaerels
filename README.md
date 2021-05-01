@@ -1,7 +1,7 @@
 # project-JasperCaerels
 project-JasperCaerels created by GitHub Classroom
 
-## The grand exchange, game design with economics inbetween!
+# The grand exchange, game design with economics inbetween!
 ## Introduction
 Most MMORPGs have one same component, a player driven economy, Runescape is no different!
 Since 2007-2008 their own personal system called the Grand Exchange was introduced.
