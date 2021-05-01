@@ -18,4 +18,4 @@ Even tho the work I'd want to manage there would be more C++ game engine based, 
 
 
 ##File structure
-![Image of my CostField](https://raw.githubusercontent.com/HowestDAE/project-JasperCaerels/Scheme/Runescape_GE.png)
+![Image of my MVVM scheme](https://raw.githubusercontent.com/HowestDAE/project-JasperCaerels/Scheme/Runescape_GE.png)
