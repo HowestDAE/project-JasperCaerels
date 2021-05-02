@@ -4,11 +4,29 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Runescape_GrandExchange.View"
+      xmlns:VM="clr-namespace:Runescape_GrandExchange.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ItemsAllPage">
-
+    <Page.DataContext>
+        <VM:ItemsAllPageVM/>
+    </Page.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ComboBox ItemsSource="{Binding Categories}"/>
+        <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedPokemon}" Grid.Row="1" Foreground="White" Background="#FF0D212F">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="50" Width="50" Margin="4"/>
+                        <TextBlock Text="{Binding Name, FallbackValue='(Item Name Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 </Page>

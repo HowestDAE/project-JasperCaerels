@@ -11,6 +11,7 @@ namespace Runescape_GrandExchange.Model
     {
         public Item() { }
 
+        [JsonIgnore]
         public BitmapImage Image
         {
             get
@@ -30,9 +31,9 @@ namespace Runescape_GrandExchange.Model
         public bool Members { get; set; }
 
         [JsonProperty(PropertyName = "current")]
-        public List<string> CurrentPriceData{ get; set; }
+        public PriceData CurrentPriceData { get; set; }
         [JsonProperty(PropertyName = "day30")]
-        public List<string> MonthPriceData { get; set; }
+        public PriceDataChange MonthPriceData { get; set; }
 
         [JsonIgnore]
         public int PriceChange { get; set; }
@@ -40,5 +41,21 @@ namespace Runescape_GrandExchange.Model
         public int CurrentPrice { get; set; }
         [JsonIgnore]
         public string PriceTrend { get; set; }
+    }
+
+    class PriceData
+    {
+        [JsonProperty(PropertyName = "trend")]
+        public string trend;
+        [JsonProperty(PropertyName = "price")]
+        public string price;
+    }
+
+    class PriceDataChange
+    {
+        [JsonProperty(PropertyName = "trend")]
+        public string trend;
+        [JsonProperty(PropertyName = "change")]
+        public string change;
     }
 }

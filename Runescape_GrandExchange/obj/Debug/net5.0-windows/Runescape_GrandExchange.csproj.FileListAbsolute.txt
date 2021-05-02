@@ -28,3 +28,4 @@ D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\ne
 D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\ref\Runescape_GrandExchange.dll
 D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\Runescape_GrandExchange.pdb
 D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\Runescape_GrandExchange.genruntimeconfig.cache
+D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs

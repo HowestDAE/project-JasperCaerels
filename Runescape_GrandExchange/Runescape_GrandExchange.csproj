@@ -7,8 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Data\Items\Item01.json" />
+    <None Remove="Resources\Data\Items\Item02.json" />
+    <None Remove="Resources\Data\Items\Item03.json" />
+    <None Remove="Resources\Data\Items\Item04.json" />
+    <None Remove="Resources\Data\Items\Item05.json" />
+    <None Remove="Resources\Data\Items\Item06.json" />
+    <None Remove="Resources\Data\Items\Item07.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Data\Items\Item01.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item02.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item03.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item04.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item05.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item06.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item07.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Resources\Data\ItemsPerCategory\" />
-    <Folder Include="Resources\Data\Items\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Background\" />
     <Folder Include="Resources\Items\" />

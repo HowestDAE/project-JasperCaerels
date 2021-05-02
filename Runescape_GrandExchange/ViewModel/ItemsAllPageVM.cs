@@ -11,7 +11,7 @@ namespace Runescape_GrandExchange.ViewModel
         public ItemsAllPageVM() 
         {
             Items = Repositories.ItemRepository.GetItems();
-            Categories = Repositories.ItemRepository.GetCategoriesNames();
+            Categories = Repositories.ItemRepository.GetCategoryNames();
         }
         public List<Item> Items { get; set; }
         public List<string> Categories { get; set; }
