@@ -6,6 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
+      "Runescape_GrandExchange/1.0.0": {
+        "dependencies": {
+          "MvvmLightLibs": "5.4.1.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "Runescape_GrandExchange.dll": {}
+        }
+      },
       "MvvmLightLibs/5.4.1.1": {
         "runtime": {
           "lib/net45/GalaSoft.MvvmLight.Extras.dll": {
@@ -37,6 +46,11 @@
     }
   },
   "libraries": {
+    "Runescape_GrandExchange/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "MvvmLightLibs/5.4.1.1": {
       "type": "package",
       "serviceable": true,

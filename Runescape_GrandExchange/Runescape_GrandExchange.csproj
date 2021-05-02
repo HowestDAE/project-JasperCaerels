@@ -6,4 +6,17 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Data\ItemsPerCategory\" />
+    <Folder Include="Resources\Data\Items\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Background\" />
+    <Folder Include="Resources\Items\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
 </Project>
