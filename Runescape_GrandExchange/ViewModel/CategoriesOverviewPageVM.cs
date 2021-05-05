@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using Runescape_GrandExchange.Model;
 namespace Runescape_GrandExchange.ViewModel
 {
-    class ItemsAllPageVM
+    class CategoriesOverviewPageVM
     {
-        public ItemsAllPageVM() 
+        public CategoriesOverviewPageVM()
         {
-            Items = Repositories.ItemRepository.GetItems();
+            Categories = Repositories.ItemRepository.GetCategories();
         }
-        public List<Item> Items { get; set; }
+        public List<Category> Categories { get; set; }
+
     }
 }

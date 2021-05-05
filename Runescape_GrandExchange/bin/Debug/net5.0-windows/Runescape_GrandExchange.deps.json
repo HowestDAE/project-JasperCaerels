@@ -9,10 +9,19 @@
       "Runescape_GrandExchange/1.0.0": {
         "dependencies": {
           "MvvmLightLibs": "5.4.1.1",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "morelinq": "3.3.2"
         },
         "runtime": {
           "Runescape_GrandExchange.dll": {}
+        }
+      },
+      "morelinq/3.3.2": {
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {
+            "assemblyVersion": "3.3.2.0",
+            "fileVersion": "3.3.2.0"
+          }
         }
       },
       "MvvmLightLibs/5.4.1.1": {
@@ -50,6 +59,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "morelinq/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MQc8GppZJLmjvcpEdf3EkC6ovsp7gRWt2e5mC7dcIOrgwSc+yjFd3JQ0iRqr3XrUT6rb/phv0IkEmBtbfVA7AQ==",
+      "path": "morelinq/3.3.2",
+      "hashPath": "morelinq.3.3.2.nupkg.sha512"
     },
     "MvvmLightLibs/5.4.1.1": {
       "type": "package",

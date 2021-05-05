@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MoreLinq;
 using Runescape_GrandExchange.Model;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
@@ -11,8 +12,7 @@ namespace Runescape_GrandExchange.Repositories
 {
     class ItemRepository
     {
-        private static List<int> _categories = null;
-        private static List<string> _categoryNames = null;
+        private static List<Category> _categories = null;
         private static List<Item> _items = null;
         public static List<Item> GetItems()
         {
@@ -41,19 +41,35 @@ namespace Runescape_GrandExchange.Repositories
             }
             return _items;
         }
-        public static List<string> GetCategoryNames()
+        public static List<Category> GetCategories()
         {
             //categories are ints, the order of int - category is alphabetical, e.g. ammo == 1st category, arrows == 2nd in the list, Miscellaneous is always 0th
             List<Item> items = GetItems();
-            if (_categoryNames != null)
-                return _categoryNames;
-            _categoryNames = new List<string>();
+            if (_categories != null)
+                return _categories;
+            _categories = new List<Category>();
             foreach (Item item in items)
             {
-                _categoryNames.Add(item.Category);
+                Category category = new Category();
+                category.Name = item.Category;
+                _categories.Add(category);
             }
-            _categoryNames = _categoryNames.Distinct().ToList();
-            return _categoryNames;
+            _categories = _categories.DistinctBy((e) => e.Name).ToList();
+            _categories = _categories.OrderBy((e) => e.Name).ToList();//sort on Name
+            Category miscCat = _categories.Find((e) => e.Name == "Miscellaneous");//find category not on alphabetical order
+
+            if(miscCat != null) //if misc category is used
+            {
+                _categories.Remove(miscCat);//take out misc category
+                miscCat.Id = 0; //Change its id to 0
+                _categories.Insert(0, miscCat); //add it back to the start of the list
+            }
+
+            for (int i = 1; i < _categories.Count-1; i++)
+            {
+                _categories[i].Id = i;
+            }
+            return _categories;
         }
         public static List<string> GetItemsByCategory()
         {
