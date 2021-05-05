@@ -18,4 +18,4 @@ Even tho the work I'd want to manage there would be more C++ game engine based, 
 
 
 ## File structure
-![Image of my MVVM scheme](https://raw.githubusercontent.com/HowestDAE/project-JasperCaerels/main/Scheme/Runescape_GE.png?token=APE2NB2GTYAUETX4NPSVRGLARVNXY)
+![Image of my MVVM scheme](https://raw.githubusercontent.com/HowestDAE/project-JasperCaerels/main/Scheme/Runescape_GE.png?token=APE2NB4P7R63UFASBWF32KDAR4SZY)
