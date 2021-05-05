@@ -31,6 +31,7 @@
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Background\" />
     <Folder Include="Resources\Items\" />
+    <Folder Include="Resources\Graphics\" />
   </ItemGroup>
 
   <ItemGroup>

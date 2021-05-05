@@ -17,11 +17,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <ListBox ItemsSource="{Binding Categories}" Grid.Row="1" Foreground="White" Background="#FF0D212F">
+        <ListBox ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Grid.Row="1" Foreground="White" Background="#FF0D212F">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="BorderThickness" Value="2" />
-                    <Setter Property="BorderBrush" Value="#FF0D211F" />
+                    <Setter Property="BorderBrush" Value="#FF091822" />
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate >
@@ -29,6 +29,9 @@
                     <StackPanel Orientation="Horizontal">
                         <Image Height="50" Width="50" Margin="4"/>
                         <TextBlock Text="{Binding Name, FallbackValue='(Item Name Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
+                        <Button>
+                            <Image Height="50" Width="50" Margin="4"/>
+                        </Button>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -13,6 +13,7 @@ namespace Runescape_GrandExchange.ViewModel
             Categories = Repositories.ItemRepository.GetCategories();
         }
         public List<Category> Categories { get; set; }
-
+        private Category _selectedCategory;
+        public Category SelectedCategory { get { return _selectedCategory; } set { _selectedCategory = value; } }
     }
 }
