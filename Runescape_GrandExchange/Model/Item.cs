@@ -11,14 +11,16 @@ namespace Runescape_GrandExchange.Model
     {
         public Item() { }
 
+
         [JsonIgnore]
         public BitmapImage Image
         {
             get
             {
-                return new BitmapImage(new Uri($"https://secure.runescape.com/m=itemdb_rs/1619431351460_obj_big.gif?id={Id}"));
+                return new BitmapImage(new Uri(ImageLink));
             }
         }
+
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
         [JsonProperty(PropertyName = "type")]
@@ -31,6 +33,8 @@ namespace Runescape_GrandExchange.Model
         public string Description { get; set; }
         [JsonProperty(PropertyName = "members")]
         public bool Members { get; set; }
+        [JsonProperty(PropertyName = "icon_large")]
+        public string ImageLink { get; set; }
 
         [JsonProperty(PropertyName = "current")]
         public PriceData CurrentPriceData { get; set; }

@@ -33,7 +33,7 @@
                 <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Source="https://secure.runescape.com/m=itemdb_rs/1620122492815_obj_big.gif?id=12091"/>
+            <Image Grid.Column="0" Source="{Binding CurrentItem.Image}"/>
             <TextBlock Grid.Column="1" Text="{Binding CurrentItem.Name}" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="40" Foreground="{StaticResource InfoText}"/>
         </Grid>
         <Grid Grid.Row="3" Grid.RowSpan="2" Background="#FF0A1923" Margin="23,0,23,-0.4" Height="285" VerticalAlignment="Bottom">

@@ -54,7 +54,7 @@ namespace Runescape_GrandExchange.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Runescape_GrandExchange;V1.0.0.0;component/view/itemsallpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Runescape_GrandExchange;component/view/itemsallpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\ItemsAllPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
