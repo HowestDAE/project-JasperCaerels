@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\App.xaml
-3813905320
+5-1018796326
 
-13-1928771671
+19-989876441
 199-616597805
-MainWindow.xaml;View\CategoriesOverviewPage.xaml;View\ItemsAllPage.xaml;
+MainWindow.xaml;View\CategoriesOverviewPage.xaml;View\ItemDetailPage.xaml;View\ItemsAllPage.xaml;View\ItemsPerCategoryPage.xaml;
 
 True
 

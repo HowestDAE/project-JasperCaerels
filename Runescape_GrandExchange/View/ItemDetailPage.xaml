@@ -1,0 +1,95 @@
+﻿<Page x:Class="Runescape_GrandExchange.View.ItemDetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Runescape_GrandExchange.View"
+      xmlns:VM="clr-namespace:Runescape_GrandExchange.ViewModel"
+      xmlns:CVT="clr-namespace:Runescape_GrandExchange.View.Converters"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ItemDetailPage">
+    <Page.DataContext>
+        <VM:ItemsDetailPageVM/>
+    </Page.DataContext>
+    <Page.Resources>
+        <CVT:TrendToImageConverter x:Key="TrendToImage"/>
+    </Page.Resources>
+    <Grid Background="#FF0D212F" >
+        <Grid.Resources>
+            <SolidColorBrush x:Key="InfoText" Color="#FFFFCA00"/>
+            <SolidColorBrush x:Key="StaticElementColor" Color="#FFFFE792"/>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+
+
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="https://secure.runescape.com/m=itemdb_rs/1620122492815_obj_big.gif?id=12091"/>
+            <TextBlock Grid.Column="1" Text="{Binding CurrentItem.Name}" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="40" Foreground="{StaticResource InfoText}"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.RowSpan="2" Background="#FF0A1923" Margin="23,0,23,-0.4" Height="285" VerticalAlignment="Bottom">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition  Height="0.5*" >
+                </RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Height="140" Margin="0,100,0,0" VerticalAlignment="Center"
+                       HorizontalAlignment="Left" Width="1"
+                       Grid.Row="0" Grid.Column="1" Fill="{StaticResource StaticElementColor}" />
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Price" FontSize="27" Grid.Row="0" FontWeight="Light" VerticalAlignment="Center"  Foreground="#FFFFE792"/>
+                <Border Grid.Row="1" BorderBrush="#FF070F15" BorderThickness="2" Width="200" Height="60" VerticalAlignment="Top" Background="#FF09151D">
+                    <TextBlock Text="{Binding CurrentItem.CurrentPriceData.Price}" FontWeight="Bold" FontSize="36"  VerticalAlignment="Top" Padding="20,5"  Foreground="{StaticResource InfoText}" />
+                </Border>
+            </Grid>
+            <!--ITEM MONTHLY CHANGE-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding CurrentItem.MonthPriceData.Trend, Converter={StaticResource TrendToImage}}" Grid.Column="0" Grid.Row="0"  VerticalAlignment="Center" Margin="0,0,0,0" Width="100" Height="100"/>
+                    <TextBlock Text="{Binding CurrentItem.MonthPriceData.Change}" FontWeight="Bold" FontSize="27" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="{StaticResource InfoText}"/>
+
+                </Grid>
+                <TextBlock Text="Monthly change" FontSize="27" Grid.Column="1" FontWeight="Light" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="{StaticResource StaticElementColor}"/>
+            </Grid>
+        </Grid>
+
+
+
+    </Grid>
+</Page>

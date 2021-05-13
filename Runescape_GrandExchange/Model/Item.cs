@@ -22,7 +22,9 @@ namespace Runescape_GrandExchange.Model
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
         [JsonProperty(PropertyName = "type")]
-        public string Category { get; set; }
+        public string CategoryName { get; set; }
+        public int CategoryID { get; set; }
+
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
         [JsonProperty(PropertyName = "description")]
@@ -45,17 +47,19 @@ namespace Runescape_GrandExchange.Model
 
     class PriceData
     {
+        public PriceData() { }
         [JsonProperty(PropertyName = "trend")]
-        public string trend;
+        public string Trend { get; set; }
         [JsonProperty(PropertyName = "price")]
-        public string price;
+        public string Price { get; set; }
     }
 
     class PriceDataChange
     {
+        public PriceDataChange() { }
         [JsonProperty(PropertyName = "trend")]
-        public string trend;
+        public string Trend { get; set; }
         [JsonProperty(PropertyName = "change")]
-        public string change;
+        public string Change { get; set; }
     }
 }

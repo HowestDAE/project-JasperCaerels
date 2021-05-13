@@ -7,37 +7,56 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Data\Items\Item01.json" />
-    <None Remove="Resources\Data\Items\Item02.json" />
-    <None Remove="Resources\Data\Items\Item03.json" />
-    <None Remove="Resources\Data\Items\Item04.json" />
-    <None Remove="Resources\Data\Items\Item05.json" />
-    <None Remove="Resources\Data\Items\Item06.json" />
-    <None Remove="Resources\Data\Items\Item07.json" />
+    <None Remove="Resources\Data\ItemsPerCategory\Category1.json" />
+    <None Remove="Resources\Data\ItemsPerCategory\Category2.json" />
+    <None Remove="Resources\Data\ItemsPerCategory\Category3.json" />
+    <None Remove="Resources\Data\ItemsPerCategory\Category4.json" />
+    <None Remove="Resources\Data\ItemsPerCategory\Category5.json" />
+    <None Remove="Resources\Data\Items\Item1.json" />
+    <None Remove="Resources\Data\Items\Item2.json" />
+    <None Remove="Resources\Data\Items\Item3.json" />
+    <None Remove="Resources\Data\Items\Item4.json" />
+    <None Remove="Resources\Data\Items\Item5.json" />
+    <None Remove="Resources\Data\Items\Item6.json" />
+    <None Remove="Resources\Data\Items\Item7.json" />
+    <None Remove="Resources\Graphics\ArrowIcon.png" />
+    <None Remove="Resources\Graphics\ArrowIconDown.png" />
+    <None Remove="Resources\Graphics\ArrowIconUp.png" />
+    <None Remove="Resources\Graphics\Rect.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Data\Items\Item01.json" />
-    <EmbeddedResource Include="Resources\Data\Items\Item02.json" />
-    <EmbeddedResource Include="Resources\Data\Items\Item03.json" />
-    <EmbeddedResource Include="Resources\Data\Items\Item04.json" />
-    <EmbeddedResource Include="Resources\Data\Items\Item05.json" />
-    <EmbeddedResource Include="Resources\Data\Items\Item06.json" />
-    <EmbeddedResource Include="Resources\Data\Items\Item07.json" />
+    <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category1.json" />
+    <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category2.json" />
+    <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category3.json" />
+    <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category4.json" />
+    <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category5.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item1.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item2.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item3.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item4.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item5.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item6.json" />
+    <EmbeddedResource Include="Resources\Data\Items\Item7.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Data\ItemsPerCategory\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Background\" />
     <Folder Include="Resources\Items\" />
-    <Folder Include="Resources\Graphics\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="morelinq" Version="3.3.2" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Graphics\ArrowIcon.png" />
+    <Resource Include="Resources\Graphics\ArrowIconDown.png" />
+    <Resource Include="Resources\Graphics\ArrowIconUp.png" />
+    <Resource Include="Resources\Graphics\Rect.png" />
   </ItemGroup>
 
 </Project>

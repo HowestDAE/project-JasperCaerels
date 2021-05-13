@@ -5,13 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Runescape_GrandExchange"
         xmlns:view="clr-namespace:Runescape_GrandExchange.View"
+        xmlns:VM="clr-namespace:Runescape_GrandExchange.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinWidth="650" MinHeight="440">
 
-    <Window.Content>
-        <view:CategoriesOverviewPage>
-            
-        </view:CategoriesOverviewPage>
-    </Window.Content>
-
+    <Window.DataContext>
+        <VM:MainViewModel>
+        </VM:MainViewModel>
+    </Window.DataContext>
+    <Grid>
+        <Frame NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"/>
+        <Button VerticalAlignment="Bottom" Width="200" Height="50"
+                Command="{Binding SwitchToCategoryCommand}"
+                Content="To Categories"/>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="200" Height="50"
+                Command="{Binding SwitchToAllItemsCommand}"
+                Content="To All Items"/>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200" Height="50"
+                Command="{Binding SwitchToItemCommand}"
+                Content="To Item"/>
+    </Grid>
 </Window>

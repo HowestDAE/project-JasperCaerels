@@ -32,3 +32,7 @@ D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\ne
 D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\View\CategoriesOverviewPage.g.cs
 D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\View\CategoriesOverviewPage.baml
 D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\bin\Debug\net5.0-windows\MoreLinq.dll
+D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\View\ItemDetailPage.g.cs
+D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\View\ItemDetailPage.baml
+D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\View\ItemsPerCategoryPage.g.cs
+D:\DAE2ndYear\ToolDev\project-JasperCaerels\Runescape_GrandExchange\obj\Debug\net5.0-windows\View\ItemsPerCategoryPage.baml

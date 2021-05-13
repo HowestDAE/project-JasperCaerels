@@ -10,7 +10,13 @@
     <Compile Update="View\CategoriesOverviewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ItemDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ItemsAllPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ItemsPerCategoryPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,7 +27,13 @@
     <Page Update="View\CategoriesOverviewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ItemDetailPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ItemsAllPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ItemsPerCategoryPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

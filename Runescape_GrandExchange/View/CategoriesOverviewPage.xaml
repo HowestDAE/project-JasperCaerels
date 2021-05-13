@@ -27,11 +27,14 @@
             <ListBox.ItemTemplate >
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Image Height="50" Width="50" Margin="4"/>
-                        <TextBlock Text="{Binding Name, FallbackValue='(Item Name Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
-                        <Button>
-                            <Image Height="50" Width="50" Margin="4"/>
+                        <Button Foreground="Transparent" Background="Transparent">
+                            <Image Height="50" Width="50" Margin="4" Source="/Resources/Graphics/ArrowIcon.png"/>
                         </Button>
+                        <TextBlock Text="{Binding Name, FallbackValue='(Category Name Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBlock Text="Amount of Items available in application: " Margin="150,0,0,0" Foreground="#FFFFE792" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBlock Text="{Binding ItemsAmountAvailable, FallbackValue='(Item Amount Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBlock Text="/" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBlock Text="{Binding ItemsAmount, FallbackValue='(Item Amount Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
