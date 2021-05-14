@@ -5,12 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Runescape_GrandExchange.View"
       xmlns:VM="clr-namespace:Runescape_GrandExchange.ViewModel"
+      xmlns:CVT="clr-namespace:Runescape_GrandExchange.View.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ItemsAllPage">
     <Page.DataContext>
         <VM:ItemsAllPageVM/>
     </Page.DataContext>
+    <Page.Resources>
+        <CVT:TrendToImageConverter x:Key="TrendToImage"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,8 +24,9 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Image Height="50" Width="50" Margin="4"/>
+                        <Image Source="{Binding Image}" Height="50" Width="50" Margin="4"/>
                         <TextBlock Text="{Binding Name, FallbackValue='(Item Name Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
+                        <Image Source="{Binding MonthPriceData.Trend, Converter={StaticResource TrendToImage}}"  Margin="20,0,0,0" Width="30" Height="30"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

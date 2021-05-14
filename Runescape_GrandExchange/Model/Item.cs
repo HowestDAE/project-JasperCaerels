@@ -25,6 +25,7 @@ namespace Runescape_GrandExchange.Model
         public int Id { get; set; }
         [JsonProperty(PropertyName = "type")]
         public string CategoryName { get; set; }
+        [JsonIgnore]
         public int CategoryID { get; set; }
 
         [JsonProperty(PropertyName = "name")]

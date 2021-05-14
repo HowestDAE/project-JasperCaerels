@@ -15,14 +15,15 @@
     </Window.DataContext>
     <Grid>
         <Frame NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"/>
+        <TextBlock Text="{Binding LoadingScreen}" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFE5CE00"/>
         <Button VerticalAlignment="Bottom" Width="200" Height="50"
                 Command="{Binding SwitchToCategoryCommand}"
-                Content="To Categories"/>
+                Content="To All Categories" Background="#FF0F508E" Foreground="#FFE5CE00"/>
         <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="200" Height="50"
                 Command="{Binding SwitchToAllItemsCommand}"
-                Content="To All Items"/>
+                Content="To All Items" Background="#FF0F508E" Foreground="#FFE5CE00"/>
         <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200" Height="50"
                 Command="{Binding SwitchToItemCommand}"
-                Content="To Item"/>
+                 Content="{Binding SpecificButtonContent}" Background="#FF0F508E" Foreground="#FFE5CE00"/>
     </Grid>
 </Window>

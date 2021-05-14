@@ -11,12 +11,9 @@ namespace Runescape_GrandExchange.ViewModel
     {
         public ItemsPerCategoryPageVM()
         {
-            Repositories.ItemRepository.GetItems();
-            Repositories.ItemRepository.GetCategories();
-            //Items = Repositories.ItemRepository.GetItemsByCategory(_currentCategory);
-
         }
-        public List<Item> Items { get; set; }
+        public List<Item> _items = new List<Item>();
+        public List<Item> Items { get { return _items; } set { _items = value; RaisePropertyChanged(nameof(Items)); } }
         private Item _selectedItem;
         public Item SelectedItem
         {
@@ -37,8 +34,7 @@ namespace Runescape_GrandExchange.ViewModel
             set
             {
                 _currentCategory = value;
-                Items = Repositories.ItemRepository.GetItemsByCategory(_currentCategory);
-                RaisePropertyChanged(nameof(Items));
+                
             }
         }
     }

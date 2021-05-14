@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Runescape_GrandExchange.View"
+      xmlns:CVT="clr-namespace:Runescape_GrandExchange.View.Converters"
       xmlns:VM="clr-namespace:Runescape_GrandExchange.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -12,6 +13,9 @@
     <Page.DataContext>
         <VM:ItemsPerCategoryPageVM/>
     </Page.DataContext>
+    <Page.Resources>
+        <CVT:TrendToImageConverter x:Key="TrendToImage"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,11 +31,12 @@
             <ListBox.ItemTemplate >
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Button Foreground="Transparent" Background="Transparent">
+                        <!--<Button Foreground="Transparent" Background="Transparent">
                             <Image Height="50" Width="50" Margin="4" Source="/Resources/Graphics/ArrowIcon.png"/>
-                        </Button>
+                        </Button>-->
+                        <Image Source="{Binding Image}" Width="50" Height="50"/>
                         <TextBlock Text="{Binding Name, FallbackValue='(Category Name Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
-                        <Image Source="https://secure.runescape.com/m=itemdb_rs/1620122492815_obj_big.gif?id=12091" Width="50" Height="50"/>
+                    <Image Source="{Binding MonthPriceData.Trend, Converter={StaticResource TrendToImage}}"  Margin="20,0,0,0" Width="30" Height="30"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

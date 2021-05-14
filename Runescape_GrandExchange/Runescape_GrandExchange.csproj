@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Data\categories.json" />
     <None Remove="Resources\Data\ItemsPerCategory\Category1.json" />
     <None Remove="Resources\Data\ItemsPerCategory\Category2.json" />
     <None Remove="Resources\Data\ItemsPerCategory\Category3.json" />
@@ -19,6 +20,7 @@
     <None Remove="Resources\Data\Items\Item5.json" />
     <None Remove="Resources\Data\Items\Item6.json" />
     <None Remove="Resources\Data\Items\Item7.json" />
+    <None Remove="Resources\Data\Items\itemsIDsOnly.json" />
     <None Remove="Resources\Graphics\ArrowIcon.png" />
     <None Remove="Resources\Graphics\ArrowIconDown.png" />
     <None Remove="Resources\Graphics\ArrowIconUp.png" />
@@ -26,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Data\categories.json" />
     <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category1.json" />
     <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category2.json" />
     <EmbeddedResource Include="Resources\Data\ItemsPerCategory\Category3.json" />
@@ -38,6 +41,7 @@
     <EmbeddedResource Include="Resources\Data\Items\Item5.json" />
     <EmbeddedResource Include="Resources\Data\Items\Item6.json" />
     <EmbeddedResource Include="Resources\Data\Items\Item7.json" />
+    <EmbeddedResource Include="Resources\Data\Items\itemsIDsOnly.json" />
   </ItemGroup>
 
   <ItemGroup>

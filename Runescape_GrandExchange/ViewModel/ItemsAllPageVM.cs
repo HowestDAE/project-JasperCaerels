@@ -11,9 +11,9 @@ namespace Runescape_GrandExchange.ViewModel
     {
         public ItemsAllPageVM() 
         {
-            Items = Repositories.ItemRepository.GetItems();
         }
-        public List<Item> Items { get; set; }
+        private List<Item> _items;
+        public List<Item> Items { get { return _items; } set { _items = value; RaisePropertyChanged(nameof(Items)); } }
         private Item _selectedItem;
 
         public Item SelectedItem

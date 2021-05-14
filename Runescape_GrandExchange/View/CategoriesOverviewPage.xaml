@@ -27,9 +27,9 @@
             <ListBox.ItemTemplate >
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Button Foreground="Transparent" Background="Transparent">
+                        <!--<Button Command  Foreground="Transparent" Background="Transparent">
                             <Image Height="50" Width="50" Margin="4" Source="/Resources/Graphics/ArrowIcon.png"/>
-                        </Button>
+                        </Button>-->
                         <TextBlock Text="{Binding Name, FallbackValue='(Category Name Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
                         <TextBlock Text="Amount of Items available in application: " Margin="150,0,0,0" Foreground="#FFFFE792" VerticalAlignment="Center" FontSize="18"/>
                         <TextBlock Text="{Binding ItemsAmountAvailable, FallbackValue='(Item Amount Here)'}" Margin="5,0" Foreground="#FFFFCA00" VerticalAlignment="Center" FontSize="18"/>
