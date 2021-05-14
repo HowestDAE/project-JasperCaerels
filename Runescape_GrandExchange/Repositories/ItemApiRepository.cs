@@ -150,29 +150,33 @@ namespace Runescape_GrandExchange.Repositories
             //READ AMOUNT OF ITEMS/CATEGORY
             List<Task<int>> tasks = new List<Task<int>>();
 
-
+            Regex myRegexHtml = new Regex("<");
             for (int i = 0; i < _categories.Count; i++)
             {
-                string endpoint = $"https://secure.runescape.com/m=itemdb_rs/api/catalogue/category.json?category={categories[i].Id}";
-                await Task.Delay(1000);//to lessen chances on Jagex api servers overloading
+                string endpoint = $"https://secure.runescape.com/m=itemdb_rs/api/catalogue/category.json?category={_categories[i].Id}";
+                //await Task.Delay(1000);//to lessen chances on Jagex api servers overloading
                 var response = await _client.GetAsync(endpoint);
                 if (!response.IsSuccessStatusCode)
                     throw new HttpRequestException(response.ReasonPhrase);
-                tasks.Add(GetAmountOfItemsPerCategoryAsync(response));
+                if (response.Content.Headers.ContentLength > 0)
+                {
+                    if (!myRegexHtml.IsMatch(response.Content.ReadAsStringAsync().Result))
+                        tasks.Add(GetAmountOfItemsPerCategoryAsync(response));
+                }
             }
             await Task.WhenAll(tasks);
 
             for (int i = 0; i < tasks.Count; i++)
             {
-                if(tasks[i].Result > 0)
+                if (tasks[i].Result > 0)
                     _categories[i].ItemsAmount = tasks[i].Result;
             }
-            
+
 
 
             return _categories;
+            
         }
-
         private static async Task<int> GetAmountOfItemsPerCategoryAsync(HttpResponseMessage response)
         {
 
