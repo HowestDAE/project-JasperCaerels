@@ -150,33 +150,31 @@ namespace Runescape_GrandExchange.Repositories
             //READ AMOUNT OF ITEMS/CATEGORY
             List<Task<int>> tasks = new List<Task<int>>();
 
-            try
-            {
-                for (int i = 0; i < _categories.Count; i++)
-                {
-                    await Task.Delay(1000);//to lessen Jagex api servers overloading
-                    tasks.Add(GetAmountOfItemsPerCategoryAsync(_categories[i].Id, _client));
-                }
-                await Task.WhenAll(tasks);
 
-                for (int i = 0; i < tasks.Count; i++)
-                {
-                    _categories[i].ItemsAmount = tasks[i].Result;
-                }
+            for (int i = 0; i < _categories.Count; i++)
+            {
+                string endpoint = $"https://secure.runescape.com/m=itemdb_rs/api/catalogue/category.json?category={categories[i].Id}";
+                await Task.Delay(1000);//to lessen chances on Jagex api servers overloading
+                var response = await _client.GetAsync(endpoint);
+                if (!response.IsSuccessStatusCode)
+                    throw new HttpRequestException(response.ReasonPhrase);
+                tasks.Add(GetAmountOfItemsPerCategoryAsync(response));
             }
-            catch (Exception)
-            { }
+            await Task.WhenAll(tasks);
+
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if(tasks[i].Result > 0)
+                    _categories[i].ItemsAmount = tasks[i].Result;
+            }
+            
+
 
             return _categories;
         }
 
-        private static async Task<int> GetAmountOfItemsPerCategoryAsync(int id, HttpClient client)
+        private static async Task<int> GetAmountOfItemsPerCategoryAsync(HttpResponseMessage response)
         {
-            string endpoint = $"https://secure.runescape.com/m=itemdb_rs/api/catalogue/category.json?category={id}";
-            await Task.Delay(1000); //delay for rs api overloading
-            var response = await client.GetAsync(endpoint);
-            if (!response.IsSuccessStatusCode)
-                throw new HttpRequestException(response.ReasonPhrase);
 
             string json = await response.Content.ReadAsStringAsync();
             List<firstLetterFilter> itemsInCategoryPerLetter = JObject.Parse(json).SelectToken("alpha").ToObject<List<firstLetterFilter>>();
