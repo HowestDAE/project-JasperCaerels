@@ -13,10 +13,10 @@ namespace Runescape_GrandExchange.ViewModel
 {
     class MainViewModel : ViewModelBase
     {
+        //Change here for local/online api
         private ItemApiRepository _instance = new ItemApiRepository();
         private ItemRepository _localInstance = new ItemRepository();
-        public ItemApiRepository Instance { get { return _instance; } }
-        public ItemRepository LocalInstance { get { return _localInstance; } }
+        public IGrandExchangeRepository Instance { get { return _instance; } }
 
         private string _loadingScreen;
         public string LoadingScreen 
@@ -44,9 +44,9 @@ namespace Runescape_GrandExchange.ViewModel
             //Instance.MainViewModelRef = this;//Solely for the sake of showing the data loading
 
             LoadingScreen = "loading items...";
-            (ItemsPage.DataContext as ItemsAllPageVM).Items = await LocalInstance.GetItemsAsync();
+            (ItemsPage.DataContext as ItemsAllPageVM).Items = await Instance.GetItemsAsync();
             LoadingScreen = "loading categories...";
-            (CategoryPage.DataContext as CategoriesOverviewPageVM).Categories = await LocalInstance.GetCategoriesAsync();
+            (CategoryPage.DataContext as CategoriesOverviewPageVM).Categories = await Instance.GetCategoriesAsync();
             LoadingScreen = string.Empty;
         }
 
@@ -97,7 +97,7 @@ namespace Runescape_GrandExchange.ViewModel
                 if (category == null)
                     return;
                 (ItemsCategoryPage.DataContext as ItemsPerCategoryPageVM).CurrentCategory = category;
-                (ItemsCategoryPage.DataContext as ItemsPerCategoryPageVM).Items = await Instance.GetItemsByCategory(category);
+                (ItemsCategoryPage.DataContext as ItemsPerCategoryPageVM).Items = await Instance.GetItemsByCategoryAsync(category);
                 CurrentPage = ItemsCategoryPage;
                 SpecificButtonContent = "To Selected item";
                 

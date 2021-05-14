@@ -11,7 +11,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 namespace Runescape_GrandExchange.Repositories
 {
-    class ItemRepository
+    class ItemRepository : IGrandExchangeRepository
     {
         private static List<Category> _categories = null;
         private static List<Item> _items = null;
@@ -113,24 +113,8 @@ namespace Runescape_GrandExchange.Repositories
             List<Task<int>> tasks = new List<Task<int>>();
             for (int i = 0; i < _categories.Count; i++)
             {
-                jsonFilePath = $"Runescape_GrandExchange.Resources.Data.ItemsPerCategory.Category{_categories[i].Id}.json";
+                jsonFilePath = $"Runescape_GrandExchange.Resources.Data.ItemsPerCategory.Category{i+1}.json";
                 tasks.Add(GetItemsPerCategoryFromJsonAsync(jsonFilePath));
-
-                using (Stream stream = assembly.GetManifestResourceStream(jsonFilePath))
-                {
-                    using (var reader = new StreamReader(stream))
-                    {
-                        JObject jObject = JObject.Parse(reader.ReadToEnd());
-                        List<firstLetterFilter> itemsInCategoryPerLetter = jObject.SelectToken("alpha").ToObject<List<firstLetterFilter>>();
-                        //count all the items per letter sum so we have a total items per category
-                        int totalAmountItems = 0;
-                        for (int j = 0; j < itemsInCategoryPerLetter.Count; j++)
-                        {
-                            totalAmountItems += itemsInCategoryPerLetter[j].ItemsAmount;
-                        }
-                        _categories[i].ItemsAmount = totalAmountItems;
-                    }
-                }
             }
             await Task.WhenAll(tasks);
             int idx=0;
@@ -165,7 +149,7 @@ namespace Runescape_GrandExchange.Repositories
             }
         }
 
-        public static async Task<List<Item>> GetItemsByCategory(Category category)
+        public async Task<List<Item>> GetItemsByCategoryAsync(Category category)
         {
             await Task.Delay(0);
             return _items.FindAll((e) => e.CategoryID == category.Id);

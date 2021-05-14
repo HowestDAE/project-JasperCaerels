@@ -13,7 +13,7 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 namespace Runescape_GrandExchange.Repositories
 {
-    class ItemApiRepository
+    class ItemApiRepository : IGrandExchangeRepository
     {
         public int ItemsLoaded { get; set; }
         private List<Category> _categories = null;
@@ -95,7 +95,7 @@ namespace Runescape_GrandExchange.Repositories
             return response;
         }
 
-        public async Task<List<Category>> GetCategories()
+        public async Task<List<Category>> GetCategoriesAsync()
         {
             //categories are ints, the order of int - category is alphabetical, e.g. ammo == 1st category, arrows == 2nd in the list, Miscellaneous is always 0th
             if (_items == null)
@@ -173,7 +173,7 @@ namespace Runescape_GrandExchange.Repositories
         private static async Task<int> GetAmountOfItemsPerCategoryAsync(int id, HttpClient client)
         {
             string endpoint = $"https://secure.runescape.com/m=itemdb_rs/api/catalogue/category.json?category={id}";
-
+            await Task.Delay(1000); //delay for rs api overloading
             var response = await client.GetAsync(endpoint);
             if (!response.IsSuccessStatusCode)
                 throw new HttpRequestException(response.ReasonPhrase);
@@ -192,7 +192,7 @@ namespace Runescape_GrandExchange.Repositories
         }
 
 
-        public async Task<List<Item>> GetItemsByCategory(Category category)
+        public async Task<List<Item>> GetItemsByCategoryAsync(Category category)
         {
             await Task.Delay(0);
             return _items.FindAll((e) => e.CategoryID == category.Id);
