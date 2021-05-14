@@ -16,7 +16,6 @@ namespace Runescape_GrandExchange.Repositories
     class ItemApiRepository
     {
         public int ItemsLoaded { get; set; }
-        private int _prevItemsLoaded = 0;
         private List<Category> _categories = null;
         private HttpClient _client = new HttpClient();
         private static List<Item> _items = null;

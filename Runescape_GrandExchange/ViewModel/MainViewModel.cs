@@ -44,9 +44,9 @@ namespace Runescape_GrandExchange.ViewModel
             //Instance.MainViewModelRef = this;//Solely for the sake of showing the data loading
 
             LoadingScreen = "loading items...";
-            (ItemsPage.DataContext as ItemsAllPageVM).Items = await Instance.GetItemsAsync();
+            (ItemsPage.DataContext as ItemsAllPageVM).Items = await LocalInstance.GetItemsAsync();
             LoadingScreen = "loading categories...";
-            (CategoryPage.DataContext as CategoriesOverviewPageVM).Categories = await Instance.GetCategories();
+            (CategoryPage.DataContext as CategoriesOverviewPageVM).Categories = await LocalInstance.GetCategoriesAsync();
             LoadingScreen = string.Empty;
         }
 
