@@ -28,7 +28,7 @@ I have some example pictures for a clearer view of the imperfections and user-un
 ![Image of Moderator](https://github.com/HowestDAE/project-JasperCaerels/blob/main/IMPORTANT/ModeratorProof.PNG)
 ![Image of GateWay time-out data](https://github.com/HowestDAE/project-JasperCaerels/blob/main/IMPORTANT/DataLoadingIn.PNG)
 
-##Important image
+## Important image
 ![Image of Await response](https://github.com/HowestDAE/project-JasperCaerels/blob/main/IMPORTANT/AwaitResponse.PNG)
 
 ## How the app works
