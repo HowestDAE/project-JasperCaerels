@@ -19,3 +19,12 @@ Even tho the work I'd want to manage there would be more C++ game engine based, 
 
 ## File structure
 ![Image of my MVVM scheme](https://raw.githubusercontent.com/HowestDAE/project-JasperCaerels/main/Scheme/Runescape_GE.png?token=APE2NB4P7R63UFASBWF32KDAR4SZY)
+
+## Results
+I came to the conclusion that the Runescape G.E. API is far from perfect. After working for it for quite some time, the same occurrence came to me repeatedly, over-complex structure for simple tasks because of the illogically structured and online easily overloaded API. Sadly, while my application is completely functional, the high rate at which Gateway Time-outs when requesting data at a rapid rate, lessens the possible functionality. Everything I want my application to be doing can be done but the data isn't fixed, sometimes specific API calls will not be timed-out, other times the previously timed-out calls might now be the valid ones instead.
+
+I have some example pictures for a clearer view of the imperfections and user-unfriendliness of the Runescape API (as a moderator of its developer company said himself)
+![Image of Moderator](https://github.com/HowestDAE/project-JasperCaerels/blob/main/IMPORTANT/ModeratorProof.PNG)
+![Image of GateWay time-out data]()
+![Image of Await response]()
+![Image of Changing local/online repository]()
