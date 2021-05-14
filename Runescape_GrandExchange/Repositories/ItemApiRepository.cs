@@ -39,19 +39,14 @@ namespace Runescape_GrandExchange.Repositories
             List<Task<Item>> tasks = new List<Task<Item>>();
             List<Task<HttpResponseMessage>> responseTasks = new List<Task<HttpResponseMessage>>();
            
-                try
-                {
+                
                     foreach (int itemID in itemIDs)
                     {
  
                         string endpoint = $"https://secure.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item={itemID}";
                         responseTasks.Add(GetResponseAsync(_client, endpoint));
                     }
-                }
-                catch (Exception)
-                {
-                    throw new Exception();
-                }
+               
                 await Task.WhenAll(responseTasks);
 
                 Regex myRegex = new Regex("<");
